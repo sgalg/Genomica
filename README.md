@@ -1,5 +1,4 @@
 # Introduction to Genomica
-## Salvatore Galgano (salvatore.galgano@sruc.ac.uk)
 
 ## Welcome to Genomica
 
