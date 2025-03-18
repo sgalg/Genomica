@@ -11,7 +11,7 @@ Moreover, the tests, and ultimately the significance levels are based on the cal
 
 ## Installation
 
-To install Genomicam, you need to install devtools first:
+To install Genomica, you need to install devtools first:
 ```{r}
 install.packages("devtools")
 ```
