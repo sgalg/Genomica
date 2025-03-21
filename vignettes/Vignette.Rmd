@@ -1,6 +1,5 @@
 ---
 title: "Introduction to Genomica"
-author: 'Salvatore Galgano (salvatore.galgano@sruc.ac.uk)'
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction to Genomica}
