@@ -8,7 +8,7 @@ Authors@R:
 Description: Description: Genomica provides a suite to analyse complex ortholog (KO) datasets. The only inputs required by the user are a data and a metadata files. If required, Genomica will carry out the log10 transformation of pre-normalised data. The final outputs are false discovery rate corrected significant KOs across the predictors as set by the user. Moreover, Genomica will carry out the enrichment analysis outputting the p. adjusted enriched pathways according to the enriched/depleted significant orthologs found through the linear mixed model. Importantly, Genomica could also be used to analyse any complex data set (e.g., eucaryotic and procaryotic organisms, taxonomic or functional-gene tables from shotgun metagenomics, AMR tables or quantitative gene tables from qPCR experiments), however, when non-KO data are provided, Genomica only carries out the linear mixed model, without performing the enrichment analysis.  
 License: GPL (>= 3)
 Encoding: UTF-8
-Imports: readxl, writexl, lmerTest, dplyr, fuzzySim
+Imports: readxl, writexl, lmerTest, dplyr, fuzzySim, MicrobiomeProfiler, enrichplot, clusterProfiler, tictoc
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends: 
