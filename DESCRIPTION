@@ -5,7 +5,7 @@ Authors@R:
     person("Salvatore", "Galgano",, "salvatore.galgano@sruc.ac.uk",
     role = c("aut", "cre"),
     comment=c(ORCID='0000-0002-5600-3206'))
-Description: Genomica provides a suite to analyse complex genomic data of different origin, both from eucaryotic and procaryotic organisms (e.g., taxonomic or functional-gene tables from shotgun metagenomics, AMR tables or quantitative gene tables from qPCR experimnents). The only inputs required by the user are a data and a metadata files. If required, Genomica will carry out the log10 transformation of pre-normalised data. The final outputs are false discovery rate corrected  .xlsx files summarising the significant comparisons.
+Description: Genomica provides a suite to analyse complex ortholog (KO) datasets. The only inputs required by the user are a data and a metadata files. If required, Genomica will carry out the log10 transformation of pre-normalised data. The final outputs are false discovery rate corrected singificant KOs across the predictors as set by the user. Moreover, Genomica will carry out the enrichment analysis outputting the p. adsjusted enriched pathways according to the enriched/depleted significant orthologs found thorugh the linear mixed model analysis. Importantly, Genomica could also be used for any complex data set (e.g., from eucaryotic and procaryotic organisms, taxonomic or functional-gene tables from shotgun metagenomics, AMR tables or quantitative gene tables from qPCR experimnents), however, when non-KO data are provided, Genomica will only carry out the linear mixed model and will not go ahead with the enrichment analysis.  
 License: GPL (>= 3)
 Encoding: UTF-8
 Imports: readxl, writexl, lmerTest, dplyr, fuzzySim
