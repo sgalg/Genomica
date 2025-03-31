@@ -133,7 +133,7 @@ genomica<-function(Data,Metadata,
 
         if ((sum(DF[,i]))>0){
 
-          model<-lmerTest::lmer(DF[,i]~DF[,Predictor]+(1|Random1),data=DF)
+          model<-lmerTest::lmer(DF[,i]~DF[,Predictor]+(1|Random1),data=DF,na.action='na.pass')
           res<-stats::anova(model)
           Results<-as.data.frame(res)
           Results$Feature_Code<-c(i)
@@ -147,7 +147,7 @@ genomica<-function(Data,Metadata,
 
             if ((sum(DF[,i]))>0){
 
-              model<-lmerTest::lmer(DF[,i]~DF[,Predictor]*DF[,Predictor2]+(1|Random1),data=DF)
+              model<-lmerTest::lmer(DF[,i]~DF[,Predictor]*DF[,Predictor2]+(1|Random1),data=DF,na.action='na.pass')
               res<-stats::anova(model)
               Results<-as.data.frame(res)
               Results$Feature_Code<-c(i)
@@ -203,7 +203,7 @@ genomica<-function(Data,Metadata,
         } else if (length(x)>0){
       for (i in x[1:length(x)]){
 
-        model2<-lmerTest::lmer(DF[,i]~DF[,Predictor]+(1|Random1),data=DF)
+        model2<-lmerTest::lmer(DF[,i]~DF[,Predictor]+(1|Random1),data=DF,na.action='na.pass')
         sum<-summary(model2)
         summ<-as.data.frame(sum$coefficients)
         summ$Predictor<-rownames(summ)
@@ -217,7 +217,7 @@ genomica<-function(Data,Metadata,
         } else{
           for (i in x[1:length(x)]){
 
-            model2<-lmerTest::lmer(DF[,i]~DF[,Predictor]*DF[,Predictor2]+(1|Random1),data=DF)
+            model2<-lmerTest::lmer(DF[,i]~DF[,Predictor]*DF[,Predictor2]+(1|Random1),data=DF,na.action='na.pass')
             sum<-summary(model2)
             summ<-as.data.frame(sum$coefficients)
             summ$Predictor<-rownames(summ)
