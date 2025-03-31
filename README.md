@@ -15,6 +15,10 @@ Finally, the enrichment analysis is performed via calling MicrobiomeProfiler (Yu
 
 If used to analyse other types of complex datasets instead of KOs (e.g., AMR tables or quantitative gene tables from qPCR experiments), Genomica will only return the lists of significant comparisons across the predictors, as established by the user, without performing the enrichment analysis.
 
+#### If you use Genomica, please cite it as below:
+
+Salvatore, G. Genomica; Linear mixed model based, multiple hypothesis testing corrected, ortholog enrichment analysis (Version 1.2.0). https://doi.org/https://doi.org/10.58073/SRUC.28695350.v1
+
 ## Installation
 
 The enrichment analysis carried out in Genomica depends on MicrobiomeProfiler (Yu G., Chen M, 2024) and devtools, thus you would need to install these packages first:
