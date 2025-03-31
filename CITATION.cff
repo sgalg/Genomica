@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use Genomica, please cite it as below."
+authors:
+- family-names: "Salvatore"
+  given-names: "Galgano"
+  orcid: "https://orcid.org/0000-0002-5600-3206"
+title: "Genomica; Linear mixed model based, multiple hypothesis testing corrected, ortholog enrichment analysis"
+version: 1.2.0
+doi: https://doi.org/10.58073/SRUC.28695350.v1
+date-released:
+url: "https://github.com/sgalg/Genomica"
