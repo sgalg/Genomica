@@ -20,7 +20,8 @@ Salvatore, G. Genomica; Linear mixed model based, multiple hypothesis testing co
 ## Installation
 
 The enrichment analysis carried out in Genomica depends on MicrobiomeProfiler (Yu G., Chen M, 2024) and devtools, thus you would need to install these packages first:
-``` {r}
+
+```{r}
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -29,6 +30,7 @@ BiocManager::install("MicrobiomeProfiler")
 install.packages("devtools")
 ```
 Thus, you could proceed installing Genomica directly from GitHub:
+
 ```{r}
 devtools::install_github('sgalg/Genomica')
 ```
@@ -68,6 +70,7 @@ IMPORTANT: Please delete the rows containing the abundance of UNMAPPED and UNGRO
 ### Metadata
 Your metadata must be formatted with samples as rows and features as columns (opposite to what seen for Data).
 IMPORTANT: the sample names must be assigned as rows (row names):
+
 ```{r}
 print(Metadata[1:5,])
 rownames(Metadata)<-Metadata$SampleID
@@ -87,6 +90,18 @@ genomica(Data = Data, Metadata = Metadata,
          R_Effects = c('Block'),R1_Levels = c('1','2','3','4','5','6','7'),
          Already_Log10_transformed = c('NO'),Folder_Name = c('Test'))
 ```
+
+So, in this particular case, the metadata only contains one predictor (Treatment), whose levels (i.e., different treatment groups) are Treatment 1 to 5, with Treatment 1 being the control group.
+
+Therefore, when setting the levels for this predictor through P1_Levels, we would organise the vector in such a way that "1" (i.e., with levels as characters) is the first number.
+
+#### IMPORTANT: if your predictor is a numerical variable, you can set the levels via: "P1_Levels=c(0)" (i.e., with 0 as numerical) which indicates 0 levels in your predictor.
+
+#### IMPORTANT: if you had two predictors, you could add these in the “Predictors” vector (e.g., Predictors=c(‘Treatment’, ‘Phase’)), and specify the levels for the second predictor in P2_Levels (e.g., P2_Levels=c(‘Starter’, ‘Grower’, ‘Finisher’)).
+
+The random factor in this metadata is "Block", indeed in this example animal study, the different statistical units were organised in a total of 7 blocks (which are summarised in the levels for the random effect with R1_Levels).
+
+
 
 
 
