@@ -83,7 +83,10 @@ IMPORTANT, Genomica will not carry out the linear mixed model of the feature who
 Currently, Genomica allows to perform the analysis either with a single or with two predictors, and in the latter case, it allows to test for the interaction between the two predictors. Everything is done by calling the function genomica():
 
 ```{r}
-?genomica
+genomica(Data = Data, Metadata = Metadata,
+         Predictors = c('Treatment'),P1_Levels = c('1','2','3','4','5'),
+         R_Effects = c('Block'),R1_Levels = c('1','2','3','4','5','6','7'),
+         Already_Log10_transformed = c('NO'),Folder_Name = c('Test'))
 ```
 
 
