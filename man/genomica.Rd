@@ -46,7 +46,7 @@ print(Data[,1:5])
 Metadata<-Metadata_Demo
 #in this example Metadata is a data frame with 35 rows (sample IDs) and 5 columns (SampleID, Treatment and Block). Treatment contains the treatment layout (1,2,3,4,5) and will be the fixed effect of the model, whilst block describes the stratification of this experimental layout according to the random effect "Room".
 print(Metadata[1:5,])
-genomica_one_predictor(Data = Data,Metadata = Metadata,
+genomica(Data = Data,Metadata = Metadata,
 Predictors = c('Treatment'),P1_Levels=c('1','2','3','4','5'),
 R_Effects=c('Block'),R1_Levels=c('1','2','3','5','6','7'),
 Already_Log10_transformed = c('NO'),Folder_Name=c('Test'))
