@@ -2,8 +2,6 @@
 
 ## Welcome to Genomica
 
-Genomica provides a suite for the analysis of complex genomic data using a false discovery rate corrected, linear mixed model approach, whilst also allowing to test for interactions between two predictors.
-
 Genomica provides a suite for the analysis of functional orthologs from the KEGG Orthology (KO) database. Genomica is based on a linear mixed model approach, whilst also allowing to test for interactions between maximum two predictors, therefore outputting both a list of significant, FDR adjusted KOs across the treatment layout and the results of the enrichment analysis based on the LMM-informed enriched or depleted orthologs, both in the different treatment groups and cumulatively.
 
 Only two data frames are needed as input to run Genomica, one containing the data (KO relative abundance) and one containing metadata information (e.g., treatment layout), moreover if required, Genomica will carry out the log10 transformation of pre-normalised data.
