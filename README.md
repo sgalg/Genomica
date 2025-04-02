@@ -109,7 +109,17 @@ The results for the analysis are all organised in the the "Genomica_Output" dire
 * Genomica_Output
   * Combined_All_Features (This file, saved both as .txt and .xslx summarises the LMM results for all the feature in Data)
   * Significant_Comparison (This file, saved both as .txt and .xslx summarises the significant comparisons, via also including a pair-wise analysis for all the levels in the predictor)
-
+  * Enrichment (This directory will store the results of the enrichment analysis)
+    * Enriched (Directory storing the enrichment analysis results for the enriched orhtologs)
+      * Predictor 1 (Genomica will create a folder for each predictor)
+        * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
+        * If there are more than five function a publication-rady 1,200 dpi tree.tiff figure will be generated.
+        * Level 1 (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
+    * Depleted (Directory storing the enrichment analysis results for the depleted orhtologs)
+      * Predictor 1 (Genomica will create a folder for each predictor)
+        * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
+        * If there are more than five function a publication-rady 1,200 dpi tree.tiff figure will be generated.
+        * Level 1 (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
 
 
 ## References
