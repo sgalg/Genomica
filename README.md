@@ -132,7 +132,7 @@ Thus, Genomica will carry out a false discovery rate-adjusted linear mixed model
 •	And, it will generate a list of comparisons for the orthologs found significantly, differentially abundant:
 ![Significant_Comparisons](images/Significant_Comparisons.png)
 
-Genomica, will then carry out the enrichment analysis through  MicrobiomeProfiler for both enriched and depleted orthologs (compared to the control group). These results will be stored in the "Enrichment" directory.
+Genomica, will then carry out the enrichment analysis through  MicrobiomeProfiler for both significantly enriched and depleted orthologs (compared to the control group). These results will be stored in the "Enrichment" directory.
 Cumulatively, a list will be generated, summarising all the p.adjusted functions:
 ![Enrichment](images/Enrichment.png)
 
