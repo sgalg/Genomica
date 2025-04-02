@@ -101,8 +101,14 @@ Therefore, when setting the levels for this predictor through P1_Levels, we woul
 
 The random factor in this metadata is "Block", indeed in this example animal study, the different statistical units were organised in a total of 7 blocks (which are summarised in the levels for the random effect with R1_Levels).
 
+Folder name is used to label your Genomica_Output directory. In this case the output directory name will be "Genomica_Output_Test".
 
+## Results
 
+The results for the analysis are all organised in the the "Genomica_Output" directory:
+* Genomica_Output
+  * Combined_All_Features (This file, saved both as .txt and .xslx summarises the LMM results for all the feature in Data)
+  * Significant_Comparison (This file, saved both as .txt and .xslx summarises the significant comparisons, via also including a pair-wise analysis for all the levels in the predictor)
 
 
 
