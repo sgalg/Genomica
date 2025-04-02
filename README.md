@@ -143,7 +143,7 @@ Moreover, for each level of each predictor (if the predictors were categorical v
 ![Specific_Enrichment](images/Specific_Enrichment.png)
 
 And, a 1,200 dpi publication-ready dot plot (.tiff) will be generated through MicrobiomeProfiler:
-![Dot_Plot](images/Dot_plot.png)
+![Dot_Plot](images/Dot_Plot.png)
 
 ## References
 
