@@ -113,13 +113,13 @@ The results for the analysis are all organised in the the "Genomica_Output" dire
     * Enriched (Directory storing the enrichment analysis results for the enriched orhtologs)
       * Predictor 1 (Genomica will create a folder for each predictor)
         * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
-        * If more than five functions are found after the enrichment analysis, a publication-rady 1,200 dpi tree.tiff figure will be generated.
-        * Level 1 (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
+        * If more than five functions are found after the enrichment analysis, a publication-ready 1,200 dpi tree.tiff figure will be generated.
+        * P_1 Level 1 to n (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
     * Depleted (Directory storing the enrichment analysis results for the depleted orhtologs)
       * Predictor 1 (Genomica will create a folder for each predictor)
         * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
-        * If more than five functions are found after the enrichment analysis, a publication-rady 1,200 dpi tree.tiff figure will be generated.
-        * Level 1 (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
+        * If more than five functions are found after the enrichment analysis, a publication-ready 1,200 dpi tree.tiff figure will be generated.
+        * P_1 Level 1 to n (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
 
 #### IMPORTANT: if no significant functions are found after the enrichement analysis, the files for the different comparisons will be empyt and the .tiff figures are not generated.
 
@@ -132,12 +132,18 @@ Thus, Genomica will carry out a false discovery rate-adjusted linear mixed model
 •	And, it will generate a list of comparisons for the orthologs found significantly, differentially abundant:
 ![Significant_Comparisons](images/Significant_Comparisons.png)
 
-The results of the enrichment analysis (orthologs enriched and depleted compared to the control group) will be stored in the "Enrichment" directory.
+Genomica, will then carry out the enrichment analysis through  MicrobiomeProfiler for both enriched and depleted orthologs (compared to the control group). These results will be stored in the "Enrichment" directory.
 Cumulatively, a list will be generated, summarising all the p.adjusted functions:
 ![Enrichment](images/Enrichment.png)
 
-And, if more than five p.adjusted functions are found, a 1,200 dpi publication-ready .tiff figure is generated:
+And, if more than five p.adjusted functions are found, a 1,200 dpi publication-ready .tiff figure is generated through MicrobiomeProfiler:
 ![Tree](images/Tree.png)
+
+Moreover, for each level of each predictor (if the predictors were categorical variables), a directory will be generated, summarising the level-specific p.adjusted enriched functions:
+![Specific_Enrichment](images/Specific_Enrichment.png)
+
+And, a 1,200 dpi publication-ready dot plot (.tiff) will be generated through MicrobiomeProfiler:
+![Dot_Plot](images/Dot_plot.png)
 
 ## References
 
