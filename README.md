@@ -123,8 +123,21 @@ The results for the analysis are all organised in the the "Genomica_Output" dire
 
 #### IMPORTANT: if no significant functions are found after the enrichement analysis, the files for the different comparisons will be empyt and the .tiff figures are not generated.
 
-So your analysis will start with a list of ortholog (rows) abundace organised throughout the samples in your study (columns):
+So, your analysis will start with a list of ortholog (rows) abundace organised throughout the samples in your study (columns):
 ![KO_Data](images/KO_Data.png)
+
+Thus, Genomica will carry out a false discovery rate-adjusted linear mixed model on all the non-0 features:
+![Combined_All](images/Combined_All.png)
+
+•	And, it will generate a list of comparisons for the orthologs found significantly, differentially abundant:
+![Significant_Comparisons](images/Significant_Comparisons.png)
+
+The results of the enrichment analysis (orthologs enriched and depleted compared to the control group) will be stored in the "Enrichment" directory.
+Cumulatively, a list will be generated, summarising all the p.adjusted functions:
+![Enrichment](images/Enrichment.png)
+
+And, if more than five p.adjusted functions are found, a 1,200 dpi publication-ready .tiff figure is generated:
+![Tree](images/Tree.png)
 
 ## References
 
