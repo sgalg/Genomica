@@ -17,6 +17,9 @@ If used to analyse other types of complex datasets instead of KOs (e.g., AMR tab
 
 Salvatore, G. Genomica; Linear mixed model based, multiple hypothesis testing corrected, ortholog enrichment analysis (Version 1.2.0). https://doi.org/https://doi.org/10.58073/SRUC.28695350.v1
 
+Yu G, Chen M (2024). MicrobiomeProfiler: An R/shiny package for microbiome functional enrichment analysis. R package version 1.12.0, https://yulab-smu.top/contribution-knowledge-mining/, https://github.com/YuLab-SMU/MicrobiomeProfiler/.
+
+
 ## Installation
 
 The enrichment analysis carried out in Genomica depends on MicrobiomeProfiler (Yu G., Chen M, 2024) and devtools, thus you would need to install these packages first:
