@@ -113,14 +113,18 @@ The results for the analysis are all organised in the the "Genomica_Output" dire
     * Enriched (Directory storing the enrichment analysis results for the enriched orhtologs)
       * Predictor 1 (Genomica will create a folder for each predictor)
         * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
-        * If there are more than five function a publication-rady 1,200 dpi tree.tiff figure will be generated.
+        * If more than five functions are found after the enrichment analysis, a publication-rady 1,200 dpi tree.tiff figure will be generated.
         * Level 1 (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
     * Depleted (Directory storing the enrichment analysis results for the depleted orhtologs)
       * Predictor 1 (Genomica will create a folder for each predictor)
         * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
-        * If there are more than five function a publication-rady 1,200 dpi tree.tiff figure will be generated.
+        * If more than five functions are found after the enrichment analysis, a publication-rady 1,200 dpi tree.tiff figure will be generated.
         * Level 1 (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
 
+#### IMPORTANT: if no significant functions are found after the enrichement analysis, the files for the different comparisons will be empyt and the .tiff figures are not generated.
+
+So your analysis will start with a list of ortholog (rows) abundace organised throughout the samples in your study (columns):
+![KO_Data](images/KO_Data.png)
 
 ## References
 
