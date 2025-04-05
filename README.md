@@ -53,7 +53,7 @@ Metadata<-Metadata_Demo
 
 ### Data
 
-IMPORTANT, the data frame "Data" must be formatted with features as rows and samples as columns, however, currently we can see that the list of features (KOs) is embedded within the first column:
+#### IMPORTANT, the data frame "Data" must be formatted with features as rows and samples as columns, however, currently we can see that the list of features (KOs) is embedded within the first column:
 
 ```{r}
 print(Data[1:5,1:5])
@@ -67,12 +67,13 @@ print(Data[1:5,1:5])
 ```
 At this point, your Data is ready for downstream analyses with Genomica.
 
-IMPORTANT: Please delete the rows containing the abundance of UNMAPPED and UNGROUPED KOs, as these would interfere with the enrichment.
+#### IMPORTANT: Please delete the rows containing the abundance of UNMAPPED and UNGROUPED KOs, as these would interfere with the enrichment.
 
 
 ### Metadata
 Your metadata must be formatted with samples as rows and features as columns (opposite to what seen for Data).
-IMPORTANT: the sample names must be assigned as rows (row names):
+#### IMPORTANT: the sample names must be assigned as rows (row names):
+#### IMPORTANT: Please delete the character "/" in any of your predictor levels (e.g., if one of your treatments is "A/Skin" you can transform it to "ASkin").  The character "/" in the predictor levels leads to an error that stops Genomica from working correctly.
 
 ```{r}
 print(Metadata[1:5,])
@@ -83,7 +84,7 @@ rownames(Metadata)<-Metadata$SampleID
 
 Genomica first carries out a linear mix model on all the features in your Data, thus it will further analyse the significant comparisons (according to the false discovery rate) and provide information on the eventual significant comparisons within the specified predictor. All the significant comparisons found at this stage will be sorted according to the model estimate in enriched or depleted KOs, which will then used for the enrichment analysis.
 
-IMPORTANT, Genomica will not carry out the linear mixed model of the feature whose quantity is 0 throughout all the samples in the data frame.
+#### IMPORTANT, Genomica will not carry out the linear mixed model of the feature whose quantity is 0 throughout all the samples in the data frame.
 
 Currently, Genomica allows to perform the analysis either with a single or with two predictors, and in the latter case, it allows to test for the interaction between the two predictors. Everything is done by calling the function genomica():
 
