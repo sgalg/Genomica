@@ -1,8 +1,6 @@
-# Introduction to Genomica
+# The version 2.0.0 of Genomica has been released
 
-
-##The version 2.0.0 of Genomica has been released!
-#Major updates:
+## Major updates:
 * Genomica now includes a comprehensive data frame pre-check, allowing users to easily identify potential discrepancies in the input data frames before running analyses.
 * Linear mixed model diagnosis. A new output directory, `Model_Diagnosis`, provides a comprehensive analysis of the model residuals, testing for normality, heteroscedasticity and outliers.
 * Users can now specify the significance threshold below which adjusted p-values are considered significant.
@@ -100,7 +98,8 @@ Currently, Genomica allows to perform the analysis either with a single or with 
 genomica(Data = Data, Metadata = Metadata,
          Predictors = c('Treatment'),P1_Levels = c('1','2','3','4','5'),
          R_Effects = c('Block'),R1_Levels = c('1','2','3','4','5','6','7'),
-         Already_Log10_transformed = c('NO'),Folder_Name = c('Test'))
+         Already_Log10_transformed = c('NO'),Folder_Name = c('Test'),
+         FDR_Level=0.05,ImgRes=300)
 ```
 
 So, in this particular case, the metadata only contains one predictor (Treatment), whose levels (i.e., different treatment groups) are Treatment 1 to 5, with Treatment 1 being the control group.
