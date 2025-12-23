@@ -148,13 +148,13 @@ Genomica, will then carry out the enrichment analysis through  MicrobiomeProfile
 Cumulatively, a list will be generated, summarising all the p.adjusted functions:
 ![Enrichment](images/Enrichment.png)
 
-And, if more than five p.adjusted functions are found, a 1,200 dpi publication-ready .tiff figure is generated through MicrobiomeProfiler:
+And, if more than five p.adjusted functions are found, a publication-ready .tiff figure is generated through MicrobiomeProfiler:
 ![Tree](images/Tree.png)
 
 Moreover, for each level of each predictor (if the predictors were categorical variables), a directory will be generated, summarising the level-specific p.adjusted enriched functions:
 ![Specific_Enrichment](images/Specific_Enrichment.png)
 
-And, a 1,200 dpi publication-ready dot plot (.tiff) will be generated through MicrobiomeProfiler:
+And, a publication-ready dot plot (.tiff) will be generated through MicrobiomeProfiler:
 ![Dot_Plot](images/Dot_Plot.png)
 
 ## References
