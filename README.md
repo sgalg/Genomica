@@ -1,6 +1,10 @@
 # The version 2.0.0 of Genomica has been released
 
+
 ## Major updates:
+
+## The version 2.0.0 of Genomica has been released
+# Major updates:
 * Genomica now includes a comprehensive data frame pre-check, allowing users to easily identify potential discrepancies in the input data frames before running analyses.
 * Linear mixed model diagnosis. A new output directory, `Model_Diagnosis`, provides a comprehensive analysis of the model residuals, testing for normality, heteroscedasticity and outliers.
 * Users can now specify the significance threshold below which adjusted p-values are considered significant.
