@@ -1,5 +1,13 @@
 # Introduction to Genomica
 
+
+##The version 2.0.0 of Genomica has been released!
+#Major updates:
+* Genomica now includes a comprehensive data frame pre-check, allowing users to easily identify potential discrepancies in the input data frames before running analyses.
+* Linear mixed model diagnosis. A new output directory, `Model_Diagnosis`, provides a comprehensive analysis of the model residuals, testing for normality, heteroscedasticity and outliers.
+* Users can now specify the significance threshold below which adjusted p-values are considered significant.
+* Users can now specify the resolution of the figures.
+
 ## Welcome to Genomica
 
 Genomica provides a suite for the analysis of functional orthologs from the KEGG Orthology (KO) database. Genomica is based on a linear mixed model approach, whilst also allowing to test for interactions between maximum two predictors, therefore outputting both a list of significant, FDR adjusted KOs across the treatment layout and the results of the enrichment analysis based on the LMM-informed enriched or depleted orthologs, both in the different treatment groups and cumulatively.
