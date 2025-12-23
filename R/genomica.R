@@ -78,7 +78,7 @@ if (!is.character(P1_Levels)){
            Predictors[1], ' is a numerical predictor.')
   )
 }
-  
+
   Predictor1_Duplicate<-P1_Levels[duplicated(P1_Levels)]
   if (length(Predictor1_Duplicate)>0){
     stop(
@@ -86,7 +86,7 @@ if (!is.character(P1_Levels)){
              Predictor1_Duplicate,' can be found twice in P1_Level - Please rename levels to avoid duplicates.')
     )
   }
-  
+
 Predictor1_L<-unique(as.character(Metadata[,Predictors[1]]))
 Predictor1_Missing<-setdiff(P1_Levels,Predictor1_L)
 Predictor1_Extra<-setdiff(Predictor1_L,P1_Levels)
@@ -124,7 +124,7 @@ if (length(Predictors)==2){
                Predictors[2], ' is a numerical predictor.')
       )
     }
-    
+
     Predictor2_Duplicate<-P2_Levels[duplicated(P2_Levels)]
     if (length(Predictor2_Duplicate)>0){
       stop(
@@ -132,7 +132,7 @@ if (length(Predictors)==2){
                Predictor2_Duplicate,' can be found twice in P2_Level - Please rename levels to avoid duplicates.')
       )
     }
-    
+
     Predictor2_L<-unique(as.character(Metadata[,Predictors[2]]))
     Predictor2_Missing<-setdiff(P2_Levels,Predictor2_L)
     Predictor2_Extra<-setdiff(Predictor2_L,P2_Levels)
@@ -212,7 +212,7 @@ if (length(R1_Levels)>1){
       paste0('Genomica has detected an error in the data frame setup. R1_Levels for ', R_Effects,' must be a character vector. Please transform to character before running Genomica.')
     )
   }
-  
+
   Random1_Duplicate<-R1_Levels[duplicated(R1_Levels)]
   if (length(Random1_Duplicate)>0){
     stop(
@@ -220,7 +220,7 @@ if (length(R1_Levels)>1){
              Random1_Duplicate,' can be found twice in R1_Level - Please rename levels to avoid duplicates.')
     )
   }
-  
+
   Random1_L<-unique(as.character(Metadata[,R_Effects]))
   Random1_Missing<-setdiff(R1_Levels,Random1_L)
   Random1_Extra<-setdiff(Random1_L,R1_Levels)
@@ -230,7 +230,7 @@ if (length(R1_Levels)>1){
       R_Effects,' could not be found in Metadata. Level(s) "',
              Random1_Missing,
              '": not found in Metadata.')
-      
+
     )
   }
   if (length(Random1_Extra)>0){
@@ -683,6 +683,7 @@ if (length(R1_Levels)>1){
           Predictor1_Depleted_KO<-as.vector(unique(Predictor1_Depleted$Feature))
           Predictor1_Depleted_KO_Enrichment<-MicrobiomeProfiler::enrichKO(gene = Predictor1_Depleted_KO)
           Predictor1_Depleted_KO_Enrichment2<-as.data.frame(Predictor1_Depleted_KO_Enrichment)
+
           if (nrow(Predictor1_Depleted_KO_Enrichment2)==0){
             Predictor1_Depleted_KO_Enrichment2[2,1]<-paste0(length(Predictor1_Depleted_KO),' under-abundant KOs were found for this predictor = No significant enrichment found')
           }
@@ -695,17 +696,18 @@ if (length(R1_Levels)>1){
 
           if (nrow(Predictor1_Enriched_KO_Enrichment2)>5){
             Predictor1_Enriched_KO_Enrichment_pairwise<-enrichplot::pairwise_termsim(Predictor1_Enriched_KO_Enrichment)
-            Predictor1_Enriched_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor1_Enriched_KO_Enrichment_pairwise)
+            Predictor1_Enriched_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor1_Enriched_KO_Enrichment_pairwise,cladelab_offset=5)
             ggplot2::ggsave(plot = Predictor1_Enriched_KO_Enrichment_Tree,
                             filename = paste0(ENRICHED_FOLDER,'/',Predictor,'/',Predictor,'_Cumulative_Vs_Control_Enriched_tree.tiff'),
                             width = 35, height = 17.5, units = 'cm',dpi=RESOLUTION)}
 
           if (nrow(Predictor1_Depleted_KO_Enrichment2)>5){
             Predictor1_Depleted_KO_Enrichment_pairwise<-enrichplot::pairwise_termsim(Predictor1_Depleted_KO_Enrichment)
-            Predictor1_Depleted_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor1_Depleted_KO_Enrichment_pairwise)
-            ggplot2::ggsave(plot = Predictor1_Depleted_KO_Enrichment_Tree,
+            Predictor1_Depleted_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor1_Depleted_KO_Enrichment_pairwise,cladelab_offset=5)
+              ggplot2::ggsave(plot = Predictor1_Depleted_KO_Enrichment_Tree,
                             filename = paste0(DEPLETED_FOLDER,'/',Predictor,'/',Predictor,'_Cumulative_Vs_Control_Depleted_tree.tiff'),
-                            width = 35, height = 17.5, units = 'cm',dpi=RESOLUTION)}
+                             width = 35, height = 17.5, units = 'cm',dpi=RESOLUTION)
+            }
 
 
 
@@ -805,14 +807,14 @@ if (length(R1_Levels)>1){
 
             if (nrow(Predictor2_Enriched_KO_Enrichment2)>5){
               Predictor2_Enriched_KO_Enrichment_pairwise<-enrichplot::pairwise_termsim(Predictor2_Enriched_KO_Enrichment)
-              Predictor2_Enriched_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor2_Enriched_KO_Enrichment_pairwise)
+              Predictor2_Enriched_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor2_Enriched_KO_Enrichment_pairwise,cladelab_offset=5)
               ggplot2::ggsave(plot = Predictor2_Enriched_KO_Enrichment_Tree,
                               filename = paste0(ENRICHED_FOLDER,'/',Predictor2,'/',Predictor2,'_Cumulative_Vs_Control_Enriched_tree.tiff'),
                               width = 35, height = 17.5, units = 'cm',dpi=RESOLUTION)}
 
             if (nrow(Predictor2_Depleted_KO_Enrichment2)>5){
               Predictor2_Depleted_KO_Enrichment_pairwise<-enrichplot::pairwise_termsim(Predictor2_Depleted_KO_Enrichment)
-              Predictor2_Depleted_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor2_Depleted_KO_Enrichment_pairwise)
+              Predictor2_Depleted_KO_Enrichment_Tree<-enrichplot::treeplot(Predictor2_Depleted_KO_Enrichment_pairwise,cladelab_offset=5)
               ggplot2::ggsave(plot = Predictor2_Depleted_KO_Enrichment_Tree,
                               filename = paste0(DEPLETED_FOLDER,'/',Predictor2,'/',Predictor2,'_Cumulative_Vs_Control_Depleted_tree.tiff'),
                               width = 35, height = 17.5, units = 'cm',dpi=RESOLUTION)}
