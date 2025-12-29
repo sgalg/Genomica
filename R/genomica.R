@@ -22,6 +22,8 @@
 #' @import clusterProfiler
 #' @import tictoc
 #' @import tidyr
+#' @import lmtest
+#' @import DHARMa
 #' @export
 #' @examples
 #' #Load Data data frame (Data_Demo)
