@@ -8,7 +8,7 @@
 #' @param P2_levels example: c('Starter','Grower') - If your second predictor is not a numerical variable, this will set the levels for your main predictor (the model will test the comparisons towards the first term in this vector, such as Grower Vs Starter in the example).
 #' @param R_Effects example: c('Block') - This vector defines the random effects according to your study design.
 #' @param R1_Levels example: c('Block1,'Block2,Block3,Block4,'Block5,Block6,Block7) - This vector will specify the levels for the random effect, according to your study design.
-#' @param Already_Log10_transformed Default = c('NO'). If c('YES'), the log10 (n+1) transformation of the features in the object Data will not be performed.
+#' @param Log10_Transf Default = TRUE. If FALSE, the log10 (n+1) transformation of the features in the object Data will not be performed.
 #' @param Folder_Name Example: c('Test') - This string will be attached to the folder name in which the results will be generated (e.g.,"Genomica_Output_Test/")
 #' @param FDR_Level Default: 0.05 - Target False Discovery Rate (FDR). Benjamini-Hochberg multiple testing correction. Results with BH-adjusted P Values ≤ FDR_Level are considered significant.
 #' @param ImgRes Default: 300 - Dots Per Inch (DPI) resolution of the .tiff output files.
@@ -39,13 +39,13 @@
 #' genomica(Data = Data,Metadata = Metadata,
 #' Predictors = c('Treatment'),P1_Levels=c('1','2','3','4','5'),
 #' R_Effects=c('Block'),R1_Levels=c('1','2','3','5','6','7'),
-#' Already_Log10_transformed = c('NO'),Folder_Name=c('Test'))
+#' Log10_Transf = TRUE,Folder_Name=c('Test'),FDR_Level=0.05,ImgRes=300)
 
 
 genomica<-function(Data,Metadata,
                    Predictors,P1_Levels=c(0),P2_Levels=c(0),
                    R_Effects,R1_Levels,
-                   Already_Log10_transformed=c('NO'),Folder_Name,
+                   Log10_Transf=TRUE,Folder_Name,
                    FDR_Level=0.05,ImgRes=300){
 
 
@@ -272,7 +272,7 @@ if (length(R1_Levels)>1){
       Data<-as.data.frame(t(Data))
       SampleID<-rownames(Data)
       Data<-as.data.frame(apply(Data[,1:length(Data)], 2, function(x) as.numeric(as.character(x))))
-      if (Already_Log10_transformed=='NO'){
+      if (Log10_Transf==TRUE){
       Data<-log10(Data+1)
       }
       rownames(Data)<-SampleID
