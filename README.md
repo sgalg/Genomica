@@ -1,4 +1,4 @@
-# Version 2.0.0 of Genomica has been released
+# Version 2.0.1 of Genomica has been released
 
 
 ## Major updates:
@@ -6,6 +6,7 @@
 * Linear mixed model diagnosis. A new output directory, `Model_Diagnosis`, provides a comprehensive analysis of the model residuals, testing for normality, heteroscedasticity and outliers.
 * Users can now specify the significance threshold below which adjusted p-values are considered significant.
 * Users can now specify the resolution of the figures.
+* The argument "Already_Log10_transformed = c('NO')" is deprecated. The new argument name is "Log10_Transf" (Default = TRUE). If Log10_Transf=FALSE, the log10 (n+1) transformation of the features in the object Data will not be performed.
 
 ## Welcome to Genomica
 
