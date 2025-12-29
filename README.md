@@ -1,4 +1,4 @@
-# The version 2.0.0 of Genomica has been released
+# Version 2.0.0 of Genomica has been released
 
 
 ## Major updates:
