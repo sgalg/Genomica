@@ -1,6 +1,6 @@
 Package: Genomica
 Title: Linear mixed model based, multiple hypothesis testing corrected, ortholog enrichment analysis.
-Version: 2.0.0
+Version: 2.0.1
 Authors@R: 
     person("Salvatore", "Galgano",, "salvatore.galgano@sruc.ac.uk",
     role = c("aut", "cre"),
