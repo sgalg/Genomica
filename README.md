@@ -100,7 +100,7 @@ Currently, Genomica allows to perform the analysis either with a single or with 
 genomica(Data = Data, Metadata = Metadata,
          Predictors = c('Treatment'),P1_Levels = c('1','2','3','4','5'),
          R_Effects = c('Block'),R1_Levels = c('1','2','3','4','5','6','7'),
-         Already_Log10_transformed = c('NO'),Folder_Name = c('Test'),
+         Log10_Transf = TRUE,Folder_Name = c('Test'),
          FDR_Level=0.05,ImgRes=300)
 ```
 
