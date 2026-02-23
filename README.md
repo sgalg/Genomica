@@ -1,3 +1,5 @@
+![](images/Logo.png)
+
 # Version 2.0.1 of Genomica has been released
 
 
