@@ -44,6 +44,8 @@ devtools::install_github('sgalg/Genomica')
 
 ## Analysis
 
+![](images/Pipeline_Summary.png)
+
 In order to carry out the analyses, you will need to load two data frames (i.e., Data and Metadata). In this section, some suggestions are provided in order to prepare the data frames for the analyses.
 
 In Genomica, you will find two pre-loaded demo data frames, i.e., Data_Demo (500 cpm-normalised KOs across 35 samples) and Metadata_Demo (informing on the study layout, such as treatment and random factor allocation relative to these 35 samples). Hereafter, we will use these demo data frames for tutorial purposes. To call these data frames simply load the package via using:
