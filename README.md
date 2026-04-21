@@ -26,7 +26,7 @@ Yu G, Chen M (2024). MicrobiomeProfiler: An R/shiny package for microbiome funct
 
 ## Installation
 
-The enrichment analysis carried out in Genomica depends on MicrobiomeProfiler (Yu G., Chen M, 2024) and devtools, thus you would need to install these packages first:
+The enrichment analysis requires MicrobiomeProfiler (Yu G., Chen M, 2024):
 
 ```{r}
 if (!require("BiocManager", quietly = TRUE))
@@ -36,11 +36,13 @@ BiocManager::install("MicrobiomeProfiler")
 
 install.packages("devtools")
 ```
-Thus, you could proceed installing Genomica directly from GitHub:
+Thus, install Genomica:
 
 ```{r}
 devtools::install_github('sgalg/Genomica')
 ```
+
+## Analysis
 
 In order to carry out the analyses, you will need to load two data frames (i.e., Data and Metadata). In this section, some suggestions are provided in order to prepare the data frames for the analyses.
 
