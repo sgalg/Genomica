@@ -48,9 +48,13 @@ devtools::install_github('sgalg/Genomica')
 
 ![](images/Pipeline_Summary.png)
 
-In order to carry out the analyses, you will need to load two data frames (i.e., Data and Metadata). In this section, some suggestions are provided in order to prepare the data frames for the analyses.
+The input files for Genomica are two data frames (i.e., Data and Metadata).
 
-In Genomica, you will find two pre-loaded demo data frames, i.e., Data_Demo (500 cpm-normalised KOs across 35 samples) and Metadata_Demo (informing on the study layout, such as treatment and random factor allocation relative to these 35 samples). Hereafter, we will use these demo data frames for tutorial purposes. To call these data frames simply load the package via using:
+The following tutorial shows how to prepare the data frames and how to carry out the analyses, based on the pre-loaded demo data frames:
+* **Data_Demo**: 500 cpm-normalised KOs across 35 samples.
+* **Metadata_Demo**: information on the study layout, i.e. treatment and random factor allocation relative.
+
+To call these data frames simply load the package via using:
 
 ```{r}
 library(Genomica)
@@ -65,17 +69,32 @@ Metadata<-Metadata_Demo
 
 #### IMPORTANT, the data frame "Data" must be formatted with features as rows and samples as columns, however, currently we can see that the list of features (KOs) is embedded within the first column:
 
+
 ```{r}
 print(Data[1:5,1:5])
 ```
+![](images/Data_Demo.png)
 
-In order to proceed with the analysis, you must assign the row names and delete the feature-embedded column. This can be done as follows:
+
+The format of Data_Demo (shown above) is typical of most bioinformatic pipelines.
+
+1. To proceed with the analysis with Genomica, we need to assign the feature names as row names:
+
 ```{r}
 rownames(Data)<-Data$KO
+print(Data[1:5,1:5])
+```
+![](images/Data_Demo_RowNames.png)
+
+2. Now we can delete the feature-embedded column:
+
+```{r}
 Data<-Data[,-1]
 print(Data[1:5,1:5])
 ```
-At this point, your Data is ready for downstream analyses with Genomica.
+![](images/Data_Demo_Clean.png)
+
+**Data is now ready**
 
 #### IMPORTANT: Please delete the rows containing the abundance of UNMAPPED and UNGROUPED KOs, as these would interfere with the enrichment.
 
