@@ -5,17 +5,17 @@
 
 ## Welcome to Genomica (V2.0.1)
 
-Genomica is an R package for the analysis of ortholog abundance data using linear mixed models, followed by functional enrichment analysis in a single streamlined workflow.
+**Genomica** is an R package for analysing ortholog abundance data using linear mixed models followed by functional enrichment, delivering **differential results** and **pathway-level insights** in a single streamlined workflow.
 
-Genomica takes a **feature abundance table** and **sample metadata** as **input**, and **outputs differential abundance results** alongside pathway-level insights (**functional enrichment**) that highlight the biological processes driving observed changes, all in clear, ready-to-use formats.
+Genomica takes a feature abundance table and sample metadata as input, and returns **differential abundance results** with **pathway-level insights** (functional enrichment) - highlighting the biological processes driving observed changes, all in clear, ready-to-use formats.
 
 Genomica is compatible with outputs from common pipelines (e.g., KO tables from HUMAnN), and while it is specifically designed for ortholog data, it can be applied to any feature table.
-When non-ortholog tables are provided (e.g., AMR or taxonomy tables), Genomica still provides robust differential analysis, allowing to identify features that significanlty change across conditions.
+Even with non-ortholog inputs (e.g., AMR or taxonomy tables), Genomica provides robust differential analysis to identify features that significantly change across conditions.
 
-Genomica is designed for researchers working with metagenomics or functional profiling data (e.g., KEGG Orthology tables) who want to:
-* Identify significanlty changing orthologs across conditions.
-* Account for complex experimental designs (e.g., repeated measures, random effects).
-* Directly interpret results at the functional/pathway level.
+**Designed for metagenomics and functional profiling studies, Genomica enables you to:**
+* Identify significantly changing features across conditions.
+* Model **complex experimental designs** (e.g., repeated measures, random effects).
+* Move directly from statistical results to biological interpretation.
 
 #### If you use Genomica, please cite using:
 
