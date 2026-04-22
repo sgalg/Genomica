@@ -7,6 +7,8 @@
 
 Genomica is an R package for the analysis of ortholog abundance data using linear mixed models, followed by functional enrichment analysis in a single streamlined workflow.
 
+Genomica takes a **feature abundance table** and **sample metadata** as **input**, and **outputs differential abundance results** alongside pathway-level insights (**functional enrichment**) that highlight the biological processes driving observed changes, all in clear, ready-to-use formats.
+
 Genomica is compatible with outputs from common pipelines (e.g., KO tables from HUMAnN), and while it is specifically designed for ortholog data, it can be applied to any feature table.
 When non-ortholog tables are provided (e.g., AMR or taxonomy tables), Genomica still provides robust differential analysis, allowing to identify features that significanlty change across conditions.
 
