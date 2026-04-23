@@ -113,12 +113,11 @@ print(Metadata[1:5,])
 
 ## Performing an analysis with Genomica
 
-Genomica first carries out a linear mix model on all the features in your Data, thus it will further analyse the significant comparisons (according to the false discovery rate) and provide information on the eventual significant comparisons within the specified predictor. All the significant comparisons found at this stage will be sorted according to the model estimate in enriched or depleted KOs, which will then used for the enrichment analysis.
+#### IMPORTANT, the features with abundance = 0 across all samples will be exluded from the analysis.
 
-#### IMPORTANT, Genomica will not carry out the linear mixed model of the feature whose quantity is 0 throughout all the samples in the data frame.
+Currently, Genomica allows one or with two predictors (fixed effects). In the latter case, the interaction between the fixed effects (Predictor 1 * Predictor 2) will be tested.
 
-Currently, Genomica allows to perform the analysis either with a single or with two predictors, and in the latter case, it allows to test for the interaction between the two predictors. Everything is done by calling the function genomica():
-
+Use the below to perform the analysis:
 ```{r}
 genomica(Data = Data, Metadata = Metadata,
          Predictors = c('Treatment'),P1_Levels = c('1','2','3','4','5'),
@@ -127,59 +126,47 @@ genomica(Data = Data, Metadata = Metadata,
          FDR_Level=0.05,ImgRes=300)
 ```
 
-So, in this particular case, the metadata only contains one predictor (Treatment), whose levels (i.e., different treatment groups) are Treatment 1 to 5, with Treatment 1 being the control group.
+1. In this particular case, metadata only contains one predictor (Treatment), whose levels (i.e., different treatment groups) are Treatment 1 to 5, with Treatment 1 being the control group (i.e., Treatment 1 is the first element in the vector P1_Levels).
 
-Therefore, when setting the levels for this predictor through P1_Levels, we would organise the vector in such a way that "1" (i.e., with levels as characters) is the first number.
-
-#### IMPORTANT: if your predictor is a numerical variable, you can set the levels via: "P1_Levels=c(0)" (i.e., with 0 as numerical) which indicates 0 levels in your predictor.
+#### IMPORTANT: if your predictor is a numerical variable, you can ignore P1_Levels or P2_Levels (Default: P1_Levels=c(0)).
 
 #### IMPORTANT: if you had two predictors, you could add these in the “Predictors” vector (e.g., Predictors=c(‘Treatment’, ‘Phase’)), and specify the levels for the second predictor in P2_Levels (e.g., P2_Levels=c(‘Starter’, ‘Grower’, ‘Finisher’)).
 
-The random factor in this metadata is "Block", indeed in this example animal study, the different statistical units were organised in a total of 7 blocks (which are summarised in the levels for the random effect with R1_Levels).
+2. The random factor in this metadata is "Block" (the study in this case was a randomised block design with 7 blocks).
 
-Folder name is used to label your Genomica_Output directory. In this case the output directory name will be "Genomica_Output_Test".
+3. Log10_Transf = TRUE; this will tell Genomica to Log10(+1) trasnform Data (i.e., please look at the model diagnosis to assess whether transformation is appropriate for your data).
+4. Folder_Name = c('Test'); this will just assign a name for the result folder.
+5. FDR_Level=0.05; this set the significance level (Default P adjusted < 0.05).
+6. ImgRes=300; this is the dpi resolution of your output figures.
 
 ## Results
 
 The results for the analysis are all organised in the the "Genomica_Output" directory:
 * Genomica_Output
   * Combined_All_Features (This file, saved both as .txt and .xslx summarises the LMM results for all the feature in Data)
+  ![Combined_All](images/Combined_All.png)
   * Significant_Comparison (This file, saved both as .txt and .xslx summarises the significant comparisons, via also including a pair-wise analysis for all the levels in the predictor)
+  ![Significant_Comparisons](images/Significant_Comparisons.png)
   * Enrichment (This directory will store the results of the enrichment analysis)
     * Enriched (Directory storing the enrichment analysis results for the enriched orhtologs)
       * Predictor 1 (Genomica will create a folder for each predictor)
-        * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
-        * If more than five functions are found after the enrichment analysis, a publication-ready 1,200 dpi tree.tiff figure will be generated.
-        * P_1 Level 1 to n (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
+        * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs), e.g.:
+        ![Enrichment](images/Enrichment.png)
+        * If more than five functions are found after the enrichment analysis, a publication-ready 1,200 dpi tree.tiff figure will be generated, e.g.:
+        ![Tree](images/Tree.png)
+        * P_1 Level 1 to n (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file), e.g.:
+        ![Dot_Plot](images/Dot_Plot.png)
     * Depleted (Directory storing the enrichment analysis results for the depleted orhtologs)
       * Predictor 1 (Genomica will create a folder for each predictor)
-        * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs)
-        * If more than five functions are found after the enrichment analysis, a publication-ready 1,200 dpi tree.tiff figure will be generated.
-        * P_1 Level 1 to n (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file)
+        * Cumulative_Vs_Control_Enriched (This file, saved both as .txt and .xslx summarises the p.adjusted enriched functions across the orthologs), e.g.:
+        ![Enrichment](images/Enrichment.png)
+        * If more than five functions are found after the enrichment analysis, a publication-ready 1,200 dpi tree.tiff figure will be generated, e.g.:
+        ![Tree](images/Tree.png)
+        * P_1 Level 1 to n (a directory will be created for every predictor level, in which the p.adjusted enriched functions are stored together with a publication-ready 1,200 dpi dot plot.tiff file), e.g.:
+        ![Dot_Plot](images/Dot_Plot.png)
 
 #### IMPORTANT: if no significant functions are found after the enrichement analysis, the files for the different comparisons will be empyt and the .tiff figures are not generated.
 
-So, your analysis will start with a list of ortholog (rows) abundace organised throughout the samples in your study (columns):
-![KO_Data](images/KO_Data.png)
-
-Thus, Genomica will carry out a false discovery rate-adjusted linear mixed model on all the non-0 features:
-![Combined_All](images/Combined_All.png)
-
-•	And, it will generate a list of comparisons for the orthologs found significantly, differentially abundant:
-![Significant_Comparisons](images/Significant_Comparisons.png)
-
-Genomica, will then carry out the enrichment analysis through  MicrobiomeProfiler for both significantly enriched and depleted orthologs (compared to the control group). These results will be stored in the "Enrichment" directory.
-Cumulatively, a list will be generated, summarising all the p.adjusted functions:
-![Enrichment](images/Enrichment.png)
-
-And, if more than five p.adjusted functions are found, a publication-ready .tiff figure is generated through MicrobiomeProfiler:
-![Tree](images/Tree.png)
-
-Moreover, for each level of each predictor (if the predictors were categorical variables), a directory will be generated, summarising the level-specific p.adjusted enriched functions:
-![Specific_Enrichment](images/Specific_Enrichment.png)
-
-And, a publication-ready dot plot (.tiff) will be generated through MicrobiomeProfiler:
-![Dot_Plot](images/Dot_Plot.png)
 
 ## References
 
