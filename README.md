@@ -103,8 +103,13 @@ Your metadata must be formatted with samples as rows and features as columns (op
 
 ```{r}
 print(Metadata[1:5,])
-rownames(Metadata)<-Metadata$SampleID
 ```
+![](images/Metadata_Demo.png)
+```{r}
+rownames(Metadata)<-Metadata$SampleID
+print(Metadata[1:5,])
+```
+![](images/Metadata_Demo_Clean.png
 
 ## Performing an analysis with Genomica
 
