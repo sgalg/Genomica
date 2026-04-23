@@ -28,7 +28,7 @@ Yu G, Chen M (2024). MicrobiomeProfiler: An R/shiny package for microbiome funct
 
 ## Installation
 
-The enrichment analysis requires MicrobiomeProfiler (Yu G., Chen M, 2024):
+This will install both MicrobiomeProfiler (Yu G., Chen M, 2024), required for the functional enrichment and Genomica:
 
 ```{r}
 if (!require("BiocManager", quietly = TRUE))
@@ -37,10 +37,7 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("MicrobiomeProfiler")
 
 install.packages("devtools")
-```
-Thus, install Genomica:
 
-```{r}
 devtools::install_github('sgalg/Genomica')
 ```
 
