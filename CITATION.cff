@@ -8,3 +8,18 @@ title: "Genomica: linear mixed model based, multiple hypothesis testing correcte
 doi: https://doi.org/10.1186/s12859-026-06450-y
 date-released:
 url: "https://github.com/sgalg/Genomica"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Galgano"
+    given-names: "Salvatore"
+    orcid: "https://orcid.org/0000-0002-5600-3206"
+  doi: "10.1186/s12859-026-06450-y"
+  journal: "BMC Bioinformatics"
+  month: 4
+  start:  # First page number
+  end:  # Last page number
+  title: "Galgano, S. Genomica: linear mixed model based, multiple hypothesis testing corrected, ortholog functional enrichment analysis"
+  issue:
+  volume:
+  year: 2026
