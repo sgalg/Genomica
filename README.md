@@ -172,9 +172,13 @@ The results for the analysis are all organised in the the "Genomica_Output" dire
 
 Bates, D., Mächler, M., Bolker, B., & Walker, S. (2015). Fitting Linear Mixed-Effects Models Using lme4. Journal of Statistical Software, 67(1), 1–48. https://doi.org/10.18637/jss.v067.i01
 
+Barbosa, A.M. (2015), fuzzySim: applying fuzzy logic to binary similarity indices in ecology. Methods Ecol Evol, 6: 853-858. https://doi.org/10.1111/2041-210X.12372
+
+Galgano, S. Genomica: linear mixed model based, multiple hypothesis testing corrected, ortholog functional enrichment analysis. BMC Bioinformatics (2026). https://doi.org/10.1186/s12859-026-06450-y
+
 Kuznetsova, A., Brockhoff, P. B., & Christensen, R. H. B. (2017). lmerTest Package: Tests in Linear Mixed Effects Models. Journal of Statistical Software, 82(13), 1–26. https://doi.org/10.18637/jss.v082.i13
 
-Barbosa, A.M. (2015), fuzzySim: applying fuzzy logic to binary similarity indices in ecology. Methods Ecol Evol, 6: 853-858. https://doi.org/10.1111/2041-210X.12372
+Yu G, Wang LG, Han Y, He QY. clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS. 2012 May;16(5):284-7. doi: 10.1089/omi.2011.0118. Epub 2012 Mar 28. PMID: 22455463; PMCID: PMC3339379.
 
 Yu G, Chen M (2024). MicrobiomeProfiler: An R/shiny package for microbiome functional enrichment analysis. R package version 1.12.0, https://yulab-smu.top/contribution-knowledge-mining/, https://github.com/YuLab-SMU/MicrobiomeProfiler/.
 
@@ -183,6 +187,6 @@ doi:10.18129/B9.bioc.enrichplot <https://doi.org/10.18129/B9.bioc.enrichplot>, R
 
 Xu, S., Hu, E., Cai, Y. et al. Using clusterProfiler to characterize multiomics data. Nat Protoc 19, 3292–3320 (2024). https://doi.org/10.1038/s41596-024-01020-z
 
-Yu G, Wang LG, Han Y, He QY. clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS. 2012 May;16(5):284-7. doi: 10.1089/omi.2011.0118. Epub 2012 Mar 28. PMID: 22455463; PMCID: PMC3339379.
+
 
 
