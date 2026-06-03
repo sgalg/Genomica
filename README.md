@@ -1,6 +1,7 @@
 ![](images/Logo.png)
 
 # Genomica: The R Package for Differential Analysis and Functional Enrichment
+
 ##Official website: https://www.sruc.ac.uk/research/research-impact/genomica/
 
 
