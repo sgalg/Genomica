@@ -1,6 +1,7 @@
 ![](images/Logo.png)
 
 # Genomica: The R Package for Differential Analysis and Functional Enrichment
+##Official website: https://www.sruc.ac.uk/research/research-impact/genomica/
 
 
 ## Welcome to Genomica (V2.0.1)
@@ -167,6 +168,12 @@ The results for the analysis are all organised in the the "Genomica_Output" dire
 
 #### IMPORTANT: if no significant functions are found after the enrichement analysis, the files for the different comparisons will be empyt and the .tiff figures are not generated.
 
+## Keywords
+
+Comparative genomics, KEGG Orthology, KO enrichment,
+functional annotation, microbial genomics,
+metagenomics, pathway analysis, bioinformatics,
+R package, genomics software.
 
 ## References
 
